@@ -1,0 +1,15 @@
+{
+  "name": "test-express",
+  "version": "1.0.0",
+  "description": "Basic server-side testing in express using mocha and chai",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robbie Jaeger",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
