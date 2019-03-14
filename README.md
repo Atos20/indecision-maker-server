@@ -1,6 +1,7 @@
-# Server-Side Testing with Express, Supertest, and Knex
+# Server-Side Testing with Express, Jest, Supertest, and Knex
 
-Starter repo for Express API server with mocha and chai testing
+Starter repo for Express API server interacting with a DB, using Jest and
+Supertest
 
 ## Setup
 
@@ -10,7 +11,7 @@ To install dependencies, run:
 npm install
 ```
 
-To create your db's:
+To create your db's (you will need to have postgres installed):
 
 ```bash
 psql
