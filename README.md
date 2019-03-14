@@ -1,4 +1,4 @@
-# Server-Side Testing with Express, Mocha, Chai, Chai-HTTP
+# Server-Side Testing with Express, Supertest, and Knex
 
 Starter repo for Express API server with mocha and chai testing
 
@@ -9,6 +9,22 @@ To install dependencies, run:
 ```bash
 npm install
 ```
+
+To create your db's:
+
+```bash
+psql
+
+# then
+
+CREATE DATABASE school;
+CREATE DATABASE school_test;
+\q
+```
+
+Then seed your db's:  
+knex seed:run  
+knex seed:run --env=test
 
 ## Run the Server
 
