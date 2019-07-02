@@ -23,9 +23,12 @@ CREATE DATABASE school_test;
 \q
 ```
 
-Then seed your db's:  
+Then seed your db's:
+
+```bash
 knex seed:run  
 knex seed:run --env=test
+```
 
 ## Run the Server
 
