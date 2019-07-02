@@ -4,7 +4,8 @@
   "description": "Basic server-side testing in express using mocha and chai",
   "main": "server.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "start": "nodemon server.js"
   },
   "author": "Robbie Jaeger",
   "license": "MIT",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
-    "babel-jest": "^24.5.0"
+    "babel-jest": "^24.5.0",
+    "nodemon": "^1.19.1"
   }
 }
