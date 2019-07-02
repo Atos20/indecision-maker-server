@@ -26,6 +26,7 @@ CREATE DATABASE school_test;
 Run the migrations for your new DB's:
 ```
 knex migrate:latest
+knex migrate:latest --env=test
 ```
 
 Then seed your db's:
