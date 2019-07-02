@@ -40,7 +40,5 @@ knex seed:run --env=test
 To start the server, run:
 
 ```bash
-node server.js
+npm start
 ```
-
-Or use `nodemon` to run the server if you have nodemon installed globally.
