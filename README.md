@@ -23,6 +23,11 @@ CREATE DATABASE school_test;
 \q
 ```
 
+Run the migrations for your new DB's:
+```
+knex migrate:latest
+```
+
 Then seed your db's:
 
 ```bash
