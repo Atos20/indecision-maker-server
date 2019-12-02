@@ -1,8 +1,6 @@
 const students = require('../../../students')
 
-exports.seed = function(knex, Promise) {
-  return knex('students').del()
-    .then(function () {
-      return knex('students').insert(students);
-    });
+exports.seed = async knex => {
+  await knex('students').del()
+  await knex('students').insert(students);
 };
