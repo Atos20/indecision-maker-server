@@ -1,11 +1,10 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import cors from 'cors';
 const app = express();
 
 app.locals.title = 'Test Express';
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 // All endpoints live here
 
