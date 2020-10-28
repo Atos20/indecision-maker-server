@@ -77,9 +77,20 @@ describe('GET /api/v1/music', () => {
     expect(response.status).toBe(200);
     expect(music).toEqual(expectedMusic);
   })
+})
+
+describe('GET /api/v1/music/:genre', () => {
+  it('should return a 200 and all music matching a specific genre', async () => {
+    const expectedMusic = await database('music').where('genre', 'country').select();
+    const response = await request(app).get('/api/v1/music/country');
+    const result = response.body;
+
+    expect(response.status).toBe(200);
+    expect(result).toEqual(expectedMusic);
+  })
 
   it('should return a 404 and the message "No music found with this genre"', async () => {
-    const response = await request(app).get('/api/v1/movies/silent');
+    const response = await request(app).get('/api/v1/music/silent');
     const { error } = response.body
 
     expect(response.status).toBe(404);
