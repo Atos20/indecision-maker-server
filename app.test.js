@@ -57,6 +57,17 @@ describe('GET /api/v1/boardgames', () => {
   })
 })
 
+describe('GET /api/v1/cardgames', () => {
+  it('should return a 200 and all of the card games', async () => {
+    const expectedCardGames = await database('card_games').select();
+    const response = await request(app).get('/api/v1/cardgames');
+    const cardGames = response.body;
+
+    expect(response.status).toBe(200);
+    expect(cardGames).toEqual(expectedCardGames);
+  })
+})
+
 describe('GET /api/v1/music', () => {
   it('should return a 200 and all of the music', async () => {
     const expectedMusic = await database('music').select();
