@@ -3,13 +3,15 @@ exports.up = function (knex) {
     return knex.schema
       .createTable('podcasts', function (table) {
         table.increments('id').primary();
-        table.string('title', 50).notNullable();
-        table.string('author', 50).notNullable();
-        table.string('audience', 50).notNullable();
-        table.string('genre', 50).notNullable();
+        table.string('podcast_id');
+        table.string('podcast_name');
+        table.string('podcast_title');
+        table.string('author');
+        table.string('audience');
+        table.string('genre');
         table.string('collectionViewUrl');
-        table.integer('episode_count').notNullable();
-        table.string('release_date', 50).notNullable();
+        table.integer('episode_count');
+        table.string('release_date');
         table.string('image_60');
         table.string('image_100');
       })
