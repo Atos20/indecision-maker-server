@@ -11,8 +11,8 @@ exports.up = function (knex) {
         table.string('collectionViewUrl').notNullable();
         table.integer('episode_count').notNullable();
         table.string('release_date').notNullable();
+        table.string('image_60').notNullable();
         table.string('image_100').notNullable();
-        table.string('image_600').notNullable();
       })
   };
   
