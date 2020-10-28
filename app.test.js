@@ -24,6 +24,16 @@ describe('GET /api/v1/movies', () => {
     expect(response.status).toBe(200);
     expect(movies).toEqual(expectedMovies);
   })
-
   //create sad path test
+})
+
+describe('GET /api/v1/movies/:genre', () => {
+  it('should return a 200 and all movies matching a specific genre', async () => {
+    const expectedMovies = await database('movies').where('genre', 'action').select();
+    const response = await request(app).get('/api/v1/movies/action');
+    const result = response.body;
+
+    expect(response.status).toBe(200);
+    expect(result).toEqual(expectedMovies);
+  })
 })
