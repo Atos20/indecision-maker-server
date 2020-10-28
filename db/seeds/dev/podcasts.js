@@ -1,13 +1,33 @@
+const getAllPodcasts = require('../../../itunesCall.js');
 
-exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
+const createPodcast = async (knex, podcast) => {
+  const newPodCast = await knex('podcasts').insert(
+
+    {
+      podcast_id: podcast.collectionId,
+      podcast_name: podcast.artistName,
+      podcast_title: podcast.collectionName,
+      author: podcast.artistName,
+      audience:podcast.contentAdvisoryRating,
+      genre: podcast.genres[0],
+      collectionViewUrl:podcast.collectionViewUrl,
+      episode_count: podcast.trackCount,
+      release_date: podcast.releaseDate,
+      image_60: podcast.artworkUrl60,
+      image_100:podcast.artworkUrl100
     });
+
+}
+
+exports.seed = async (knex) => {
+  try {
+    await knex('podcasts').del()
+    let podcastPromise = await getAllPodcasts()
+    let podcastTableData = podcastPromise.results.map(podcast => {
+      return createPodcast(knex, podcast);
+    });
+    return Promise.all(podcastTableData);
+  } catch (error) {
+    console.log(`Error seeding data: ${error}`)
+  }
 };
