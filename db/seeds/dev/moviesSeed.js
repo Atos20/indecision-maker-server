@@ -1,10 +1,11 @@
-const movieData = require('./papersData');
-const tables = ['action', 'all', 'comedy', 'fantasty',]
-const table = 'horror'
+const movieData = require('../../data/movies');
+const tables = ['adventure', 'all', 'comedy', 'fantasty', 'animation', 'family']
+const table = 'family'
 
 const createMovie = async (knex, movie) => {
   const movieId = await knex(table).insert({
     title: movie,
+
   }, 'id');
 }
 exports.seed = async (knex) => {
