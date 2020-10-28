@@ -3,15 +3,16 @@ const movieData = require('../../data/movies');
 const category = 'family'
 
 const createMovie = async (knex, movie) => {
-  const movieId = await knex(table).insert({
-    title: movie,
+  const movieId = await knex('movies').insert({
+    title: movie.title.title,
 
   }, 'id');
 }
 exports.seed = async (knex) => {
   try {
-    await knex(category).del()
+    await knex('movies').del()
     let allMovieData = await movieData(category)
+    console.log(allMovieData)
     let moviePromises = allMovieData.map(movie => {
       return createMovie(knex, movie);
     });
