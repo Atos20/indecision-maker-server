@@ -57,3 +57,14 @@ describe('GET /api/v1/boardgames', () => {
     expect(boardGames).toEqual(expectedBoardGames);
   })
 })
+
+describe('GET /api/v1/music', () => {
+  it('should return a 200 and all of the music', async () => {
+    const expectedMusic = await database('music').select();
+    const response = await request(app).get('/api/v1/music');
+    const music = response.body;
+
+    expect(response.status).toBe(200);
+    expect(music).toEqual(expectedMusic);
+  })
+})
