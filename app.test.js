@@ -109,3 +109,21 @@ describe('GET /api/v1/podcasts', () => {
   })
 })
 
+describe('GET /api/v1/podcasts/:genre', () => {
+  it('should return a 200 and all podcasts matching a specific genre', async () => {
+    const expectedPodcasts = await database('podcasts').where('genre', 'news').select();
+    const response = await request(app).get('/api/v1/podcasts/news');
+    const result = response.body;
+
+    expect(response.status).toBe(200);
+    expect(result).toEqual(expectedPodcasts);
+  })
+
+  it('should return a 404 and the message "No podcasts found with this genre"', async () => {
+    const response = await request(app).get('/api/v1/podcasts/silence');
+    const { error } = response.body
+
+    expect(response.status).toBe(404);
+    expect(error).toEqual('No podcasts found with this genre');
+  })
+})
