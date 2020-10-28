@@ -97,3 +97,15 @@ describe('GET /api/v1/music/:genre', () => {
     expect(error).toEqual('No music found with this genre');
   })
 })
+
+describe('GET /api/v1/podcasts', () => {
+  it('should return a 200 and all of the podcasts', async () => {
+    const expectedPodcasts = await database('podcasts').select();
+    const response = await request(app).get('/api/v1/podcasts');
+    const podcasts = response.body;
+
+    expect(response.status).toBe(200);
+    expect(podcasts).toEqual(expectedPodcasts);
+  })
+})
+
