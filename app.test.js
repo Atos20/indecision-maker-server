@@ -36,4 +36,13 @@ describe('GET /api/v1/movies/:genre', () => {
     expect(response.status).toBe(200);
     expect(result).toEqual(expectedMovies);
   })
+
+   it('should return a 404 and the message "No movies found with this genre"', async () => {
+    const expectedMovies = await database('movies').where('genre', 'boring').select();
+    const response = await request(app).get('/api/v1/movies/boring');
+    const { error } = response.body
+
+    expect(response.status).toBe(404);
+    expect(error).toEqual('No movies found with this genre');
+  })
 })
