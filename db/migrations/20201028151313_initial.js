@@ -7,9 +7,9 @@ exports.up = function(knex) {
       table.string('instructions');
       table.string('description');
       table.boolean('single_player').defaultTo(0);
-      table.array('materials');
-      table.integer('number_of_players');
-      table.string('image');
+      table.string('materials');
+      table.string('number_of_players');
+      table.string('video');
       table.boolean('family_friendly').defaultTo(1);
       table.timestamps(true, true);
     })
