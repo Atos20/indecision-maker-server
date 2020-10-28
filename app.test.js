@@ -46,3 +46,14 @@ describe('GET /api/v1/movies/:genre', () => {
     expect(error).toEqual('No movies found with this genre');
   })
 })
+
+describe('GET /api/v1/boardgames', () => {
+  it('should return a 200 and all of the board games', async () => {
+    const expectedBoardGames = await database('board_games').select();
+    const response = await request(app).get('/api/v1/boardgames');
+    const boardGames = response.body;
+
+    expect(response.status).toBe(200);
+    expect(boardGames).toEqual(expectedBoardGames);
+  })
+})
