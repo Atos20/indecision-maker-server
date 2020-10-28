@@ -33,4 +33,6 @@ const singleMovie = async (title) => {
   catch (e) {
   }
 }
-module.exports = movieFetch
+module.exports = {
+  movieFetch, singleMovie
+}
