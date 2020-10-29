@@ -1,7 +1,6 @@
 const getAllData = require('../../../itunesCall.js');
 
 const createPodcast = async (knex, podcast) => {
-  console.log(podcast)
   const newPodCast = await knex('podcasts').insert(
     {
       podcast_name: podcast.artistName,

@@ -4,7 +4,7 @@ exports.up = function (knex) {
         table.increments('id').primary();
         table.string('artist');
         table.string('genre');
-        table.string('song_title');//collectioSensorName
+        table.string('song_title');
         table.string('album_title');
         table.string('album_url');
         table.string('type');
