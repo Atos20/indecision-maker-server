@@ -4,6 +4,7 @@ const category = 'family'
 const createMovie = async (knex, movie) => {
   const movieId = await knex('movies').insert({
     title: movie.title.title,
+    genre: movie.genres.join(', '),
     content_rating: movie.certificates && movie.certificates.US[0].certificate,
     movie_plot: movie.plotSummary && movie.plotSummary.text,
     brief_description: movie.plotOutline.text,

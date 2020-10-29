@@ -6,15 +6,6 @@ const environment = process.env.NODE_ENV || 'development'
 const configuration = require('./knexfile')[environment]
 const database = require('knex')(configuration)
 
-describe('Server', () => {
-  describe('init', () => {
-    it('should return a 200 status', async () => {
-      const res = await request(app).get('/')
-      expect(res.status).toBe(200)
-    });
-  });
-});
-
 describe('GET /api/v1/movies', () => {
   it('should return a 200 and all of the movies', async () => {
     const expectedMovies = await database('movies').select();
@@ -29,8 +20,8 @@ describe('GET /api/v1/movies', () => {
 
 describe('GET /api/v1/movies/:genre', () => {
   it('should return a 200 and all movies matching a specific genre', async () => {
-    const expectedMovies = await database('movies').where('genre', 'action').select();
-    const response = await request(app).get('/api/v1/movies/action');
+    const expectedMovies = await database('movies').where('genre', 'ilike', '%adventure%').select();
+    const response = await request(app).get('/api/v1/movies/adventure');
     const result = response.body;
 
     expect(response.status).toBe(200);
@@ -42,7 +33,7 @@ describe('GET /api/v1/movies/:genre', () => {
     const { error } = response.body
 
     expect(response.status).toBe(404);
-    expect(error).toEqual('No movies found with this genre');
+    expect(error).toEqual('No movies found with a genre of boring');
   })
 })
 
@@ -81,8 +72,8 @@ describe('GET /api/v1/music', () => {
 
 describe('GET /api/v1/music/:genre', () => {
   it('should return a 200 and all music matching a specific genre', async () => {
-    const expectedMusic = await database('music').where('genre', 'country').select();
-    const response = await request(app).get('/api/v1/music/country');
+    const expectedMusic = await database('music').where('genre', 'Country').select();
+    const response = await request(app).get('/api/v1/music/Country');
     const result = response.body;
 
     expect(response.status).toBe(200);
@@ -94,7 +85,7 @@ describe('GET /api/v1/music/:genre', () => {
     const { error } = response.body
 
     expect(response.status).toBe(404);
-    expect(error).toEqual('No music found with this genre');
+    expect(error).toEqual('No music found with a genre of silent');
   })
 })
 
@@ -111,7 +102,7 @@ describe('GET /api/v1/podcasts', () => {
 
 describe('GET /api/v1/podcasts/:genre', () => {
   it('should return a 200 and all podcasts matching a specific genre', async () => {
-    const expectedPodcasts = await database('podcasts').where('genre', 'news').select();
+    const expectedPodcasts = await database('podcasts').where('genre', 'ilike', '%news%').select();
     const response = await request(app).get('/api/v1/podcasts/news');
     const result = response.body;
 
@@ -124,6 +115,6 @@ describe('GET /api/v1/podcasts/:genre', () => {
     const { error } = response.body
 
     expect(response.status).toBe(404);
-    expect(error).toEqual('No podcasts found with this genre');
+    expect(error).toEqual('No podcasts found with a genre of silence');
   })
 })

@@ -10,7 +10,6 @@ exports.up = function(knex) {
       table.string('number_of_players');
       table.string('video');
       table.boolean('family_friendly').defaultTo(1);
-      table.timestamps(true, true);
     })
 };
 

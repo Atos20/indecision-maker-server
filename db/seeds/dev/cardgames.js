@@ -12,13 +12,13 @@ const createCardGame = async (knex, game) => {
   });
 }
 
-exports.seed = (knex) => {
+exports.seed = async (knex) => {
   try {
-    knex('card_games').del();
+    await knex('card_games').del();
     let allGames = cardGamesData.map(game => {
       return createCardGame(knex, game);
     })
-    return Promise.all(allGames)
+    return Promise.all(allGames);
   } catch(error) {
     console.log(`Error seeding data: ${error}`)
   }  
