@@ -1,8 +1,8 @@
 const fetch = require("node-fetch");
 
-const getPodcastData = async () => {
+const getData = async (activity) => {
     try {
-		const response = await fetch(`https://itunes.apple.com/search?term=$podcast`, {
+		const response = await fetch(`https://itunes.apple.com/search?term=${activity}`, {
 			"method": "GET",
 		})
 		const resolved = await response.json()
@@ -13,11 +13,11 @@ const getPodcastData = async () => {
 	}
 }
 
-const getAllPodcasts = async () => {
-    const data = await getPodcastData()
+const getAllData = async (activity) => {
+    const data = await getData(activity)
     return data
   }
 
-module.exports = getAllPodcasts
+module.exports = getAllData
 
 
