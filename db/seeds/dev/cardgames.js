@@ -12,7 +12,7 @@ const createCardGame = async (knex, game) => {
   });
 }
 
-exports.seed = (knex) => {
+exports.seed = async (knex) => {
   try {
     await knex('card_games').del();
     let allGames = cardGamesData.map(game => {
