@@ -8,7 +8,7 @@ const createBoardgame = async (knex, board) => {
     max_players: board.max_players,
     image: board.image_url,
     average_time: ((+board.min_playtime + +board.max_playtime) / 2),
-  }, 'id');
+  });
 }
 exports.seed = async (knex) => {
   try {
