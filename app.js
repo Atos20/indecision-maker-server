@@ -36,4 +36,13 @@ app.get('/api/v1/movies/:genre', async (req, res) => {
   }
 })
 
+app.get('/api/v1/boardgames', async (req, res) => {
+  try {
+    const boardGames = await database('board_games').select();
+    res.status(200).json(boardGames);
+  } catch(e) {
+    res.status(500).json({e})
+  }
+})
+
 module.exports = app;
