@@ -49,10 +49,6 @@ describe('GET /api/v1/movies/:genre', () => {
 describe('GET /api/v1/boardgames', () => {
   it('should return a 200 and all of the board games', async () => {
     const expectedBoardGames = await database('board_games').select();
-    expectedBoardGames.forEach(game => {
-      game.created_at.toString()
-      game.updated_at.toString()
-    })
     const response = await request(app).get('/api/v1/boardgames');
     const boardGames = response.body;
 
@@ -84,13 +80,8 @@ describe('GET /api/v1/music', () => {
 })
 
 describe('GET /api/v1/music/:genre', () => {
-  it.only('should return a 200 and all music matching a specific genre', async () => {
+  it('should return a 200 and all music matching a specific genre', async () => {
     const expectedMusic = await database('music').where('genre', 'Country').select();
-    expectedMusic.forEach(song => {
-      song.created_at.toString()
-      song.updated_at.toString()
-    })
-    console.log('expected music', expectedMusic)
     const response = await request(app).get('/api/v1/music/Country');
     const result = response.body;
 
@@ -98,7 +89,7 @@ describe('GET /api/v1/music/:genre', () => {
     expect(result).toEqual(expectedMusic);
   })
 
-  it('should return a 404 and the message "No music found with this genre"', async () => {
+  it.only('should return a 404 and the message "No music found with this genre"', async () => {
     const response = await request(app).get('/api/v1/music/silent');
     const { error } = response.body
 
