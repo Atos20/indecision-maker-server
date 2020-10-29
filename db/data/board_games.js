@@ -1,7 +1,7 @@
 const apiCalls = require("../../apiCalls.js")
-const games = ['chess', 'checkers', 'jenga', 'clue', 'scrabble', 'connect four', 'candy Land', 'exploding Kittens', 'scrabble', 'life', 'guess Who?', 'operation', 'scategories', 'apples to Apples', 'monopoly', 'battleship', 'mouse trap', 'trivial Pursuit', 'charades', 'pictionary']
 
 const board_gameData = async () => {
+  const games = ['chess', 'checkers', 'jenga', 'clue', 'scrabble', 'connect four', 'candy Land', 'exploding Kittens', 'scrabble', 'life', 'guess Who?', 'operation', 'scategories', 'apples to Apples', 'monopoly', 'battleship', 'mouse trap', 'trivial Pursuit', 'charades', 'pictionary']
   let gamesToPost = []
   let counter = 0;
   while (gamesToPost.length < 19) {
@@ -15,4 +15,4 @@ const board_gameData = async () => {
   return gamesToPost
 }
 
-module.exports = movieData;
+module.exports = board_gameData;
