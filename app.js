@@ -23,7 +23,7 @@ app.get('/api/v1/movies', async (req, res) => {
 
 app.get('/api/v1/movies/:genre', async (req, res) => {
   try {
-    const movies = await database('movies').where('genre', req.params.genre).select();
+    const movies = await database('movies').where('genre', 'ilike', `%${req.params.genre}%`).select();
     if (movies.length) {
       res.status(200).json(movies);
     } else {
