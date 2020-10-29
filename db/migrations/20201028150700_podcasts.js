@@ -6,9 +6,9 @@ exports.up = function (knex) {
         table.string('podcast_name');
         table.string('podcast_title');
         table.string('author');
-        table.string('familiy_friendly').defaultTo(1);
+        table.boolean('familiy_friendly').defaultTo(1);
         table.string('genre');
-        table.string('collectionViewUrl');
+        table.string('collection_url');
         table.integer('episode_count');
         table.string('release_date');
         table.string('image_60');
