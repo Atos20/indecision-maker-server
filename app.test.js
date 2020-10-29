@@ -28,7 +28,7 @@ describe('GET /api/v1/movies', () => {
 })
 
 describe('GET /api/v1/movies/:genre', () => {
-  it.only('should return a 200 and all movies matching a specific genre', async () => {
+  it('should return a 200 and all movies matching a specific genre', async () => {
     const expectedMovies = await database('movies').where('genre', 'ilike', '%adventure%').select();
     const response = await request(app).get('/api/v1/movies/adventure');
     const result = response.body;
@@ -47,8 +47,12 @@ describe('GET /api/v1/movies/:genre', () => {
 })
 
 describe('GET /api/v1/boardgames', () => {
-  it('should return a 200 and all of the board games', async () => {
+  it.only('should return a 200 and all of the board games', async () => {
     const expectedBoardGames = await database('board_games').select();
+    expectedBoardGames.forEach(game => {
+      game.created_at.toString()
+      game.updated_at.toString()
+    })
     const response = await request(app).get('/api/v1/boardgames');
     const boardGames = response.body;
 
