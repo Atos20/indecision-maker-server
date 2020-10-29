@@ -7,11 +7,11 @@ const createPodcast = async (knex, podcast) => {
       podcast_name: podcast.artistName,
       podcast_title: podcast.collectionName,
       author: podcast.artistName,
-      audience:podcast.contentAdvisoryRating,
       genre: podcast.genres[0],
-      collectionViewUrl:podcast.collectionViewUrl,
+      collection_url:podcast.collectionViewUrl,
       episode_count: podcast.trackCount,
       release_date: podcast.releaseDate,
+      type: podcast.trackExplicitness,
       image_60: podcast.artworkUrl60,
       image_100:podcast.artworkUrl100
     });
