@@ -34,7 +34,6 @@ const singleMovie = async (title) => {
   }
 }
 const boardGame = async (name) => {
-  console.log()
   try {
     const response = await fetch(`https://www.boardgameatlas.com/api/search?name=${name}&pretty=true&client_id=JLBr5npPhV`, {
       "method": "GET",
