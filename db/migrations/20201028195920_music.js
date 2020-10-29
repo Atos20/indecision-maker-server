@@ -11,7 +11,6 @@ exports.up = function (knex) {
         table.string('release_date');
         table.string('image_60');
         table.string('image_100');
-        table.timestamps(true, true)
       })
   };
   
