@@ -11,7 +11,7 @@ const movieData = async (genre) => {
       moviesToPost.push(randomMovieDetails)
     }
     counter++
-    setTimeout(() => {counter / 25}, 250)
+    setTimeout(() => {console.log(`${counter} / 25`)}, 250)
   }
   return moviesToPost
 }
