@@ -8,6 +8,7 @@ exports.up = function (knex) {
         table.string('author');
         table.boolean('familiy_friendly').defaultTo(1);
         table.string('genre');
+        table.string('type');
         table.string('collection_url');
         table.integer('episode_count');
         table.string('release_date');
