@@ -2,6 +2,7 @@ exports.up = knex => {
   return knex.schema.createTable('movies', function (table) {
     table.increments('id').primary()
     table.string('brief_description')
+    table.string('movie_plot', 10000)
     table.string('content_rating')
     table.string('image_poster')
     table.string('imdb_rating')
