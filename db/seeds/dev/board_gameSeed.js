@@ -1,8 +1,7 @@
-const movieData = require('../../data/movies');
-const category = 'family'
+const board_gameData = require('../../data/board_games');
 
-const createBoardgame = async (knex, movie) => {
-  const boardId = await knex('movies').insert({
+const createBoardgame = async (knex, board) => {
+  const boardId = await knex('board_games').insert({
     name: board.name,
     description: board.description || board.description_preview,
     min_players: board.min_players,
@@ -13,14 +12,13 @@ const createBoardgame = async (knex, movie) => {
 }
 exports.seed = async (knex) => {
   try {
-    await knex('movies').del()
-    let allMovieData = await movieData(category)
-    let moviePromises = allMovieData.map(movie => {
+    await knex('board_games').del()
+    let boardData = await board_gameData()
+    let board_gamePromises = boardData.map(movie => {
       return createMovie(knex, movie);
     });
-    return Promise.all(moviePromises);
+    return Promise.all(board_gamePromises);
   } catch (error) {
     console.log(`Error seeding data: ${error}`)
   }
-};
 };
