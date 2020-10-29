@@ -14,8 +14,8 @@ exports.seed = async (knex) => {
   try {
     await knex('board_games').del()
     let boardData = await board_gameData()
-    let board_gamePromises = boardData.map(movie => {
-      return createMovie(knex, movie);
+    let board_gamePromises = boardData.map(board => {
+      return createBoardgame(knex, board);
     });
     return Promise.all(board_gamePromises);
   } catch (error) {

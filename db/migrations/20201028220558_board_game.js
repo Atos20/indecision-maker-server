@@ -6,7 +6,7 @@ exports.up = knex => {
     table.string('min_players')
     table.string('max_players')
     table.string('image')
-    table.string('averate_time').defaultTo(1)
+    table.string('average_time').defaultTo(1)
     table.timestamps(true, true)
   })
 };
