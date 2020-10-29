@@ -1,15 +1,13 @@
-
 exports.up = function (knex) {
     return knex.schema
-      .createTable('podcasts', function (table) {
+      .createTable('music', function (table) {
         table.increments('id').primary();
-        table.string('podcast_name');
-        table.string('podcast_title');
-        table.string('author');
+        table.string('artist');
         table.string('genre');
+        table.string('song_title');
+        table.string('album_title');
+        table.string('album_url');
         table.string('type');
-        table.string('collection_url');
-        table.integer('episode_count');
         table.string('release_date');
         table.string('image_60');
         table.string('image_100');
@@ -19,5 +17,5 @@ exports.up = function (knex) {
   
   exports.down = function (knex) {
     return knex.schema
-      .dropTable('podcasts')
+      .dropTable('music')
   };
