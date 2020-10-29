@@ -7,7 +7,7 @@ exports.up = function (knex) {
         table.string('song_title');//collectioSensorName
         table.string('album_title');
         table.string('album_url');
-        table.string('familiy_friendly').defaultTo(1);
+        table.string('type');
         table.string('release_date');
         table.string('image_60');
         table.string('image_100');
