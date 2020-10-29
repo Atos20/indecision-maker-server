@@ -6,6 +6,7 @@ exports.up = knex => {
     table.string('content_rating')
     table.string('image_poster')
     table.string('imdb_rating')
+    table.string('genre')
     table.string('release_date')
     table.string('runtime')
     table.string('title')
