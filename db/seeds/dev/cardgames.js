@@ -1,7 +1,7 @@
 const cardGamesData = require('../../data/cardGamesData.js');
 
-const createCardGame = (knex, game) => {
-  const newCard = knex('card_games').insert({
+const createCardGame = async (knex, game) => {
+  const newCard = await knex('card_games').insert({
     name: game.name,
     instructions: game.instructions,
     description: game.description,
@@ -14,11 +14,11 @@ const createCardGame = (knex, game) => {
 
 exports.seed = (knex) => {
   try {
-    knex('card_games').del();
+    await knex('card_games').del();
     let allGames = cardGamesData.map(game => {
       return createCardGame(knex, game);
     })
-    return allGames
+    return Promise.all(allGames);
   } catch(error) {
     console.log(`Error seeding data: ${error}`)
   }  
