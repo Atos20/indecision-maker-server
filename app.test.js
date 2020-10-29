@@ -6,15 +6,6 @@ const environment = process.env.NODE_ENV || 'development'
 const configuration = require('./knexfile')[environment]
 const database = require('knex')(configuration)
 
-describe('Server', () => {
-  describe('init', () => {
-    it('should return a 200 status', async () => {
-      const res = await request(app).get('/')
-      expect(res.status).toBe(200)
-    });
-  });
-});
-
 describe('GET /api/v1/movies', () => {
   it('should return a 200 and all of the movies', async () => {
     const expectedMovies = await database('movies').select();
@@ -89,7 +80,7 @@ describe('GET /api/v1/music/:genre', () => {
     expect(result).toEqual(expectedMusic);
   })
 
-  it.only('should return a 404 and the message "No music found with this genre"', async () => {
+  it('should return a 404 and the message "No music found with this genre"', async () => {
     const response = await request(app).get('/api/v1/music/silent');
     const { error } = response.body
 
@@ -111,7 +102,7 @@ describe('GET /api/v1/podcasts', () => {
 
 describe('GET /api/v1/podcasts/:genre', () => {
   it('should return a 200 and all podcasts matching a specific genre', async () => {
-    const expectedPodcasts = await database('podcasts').where('genre', 'news').select();
+    const expectedPodcasts = await database('podcasts').where('genre', 'ilike', '%news%').select();
     const response = await request(app).get('/api/v1/podcasts/news');
     const result = response.body;
 
@@ -124,6 +115,6 @@ describe('GET /api/v1/podcasts/:genre', () => {
     const { error } = response.body
 
     expect(response.status).toBe(404);
-    expect(error).toEqual('No podcasts found with this genre');
+    expect(error).toEqual('No podcasts found with a genre of silence');
   })
 })
