@@ -4,13 +4,13 @@ const games = ['chess', 'checkers', 'jenga', 'clue', 'scrabble', 'connect four',
 const board_gameData = async () => {
   let gamesToPost = []
   let counter = 0;
-  while (gamesToPost.length < 20) {
+  while (gamesToPost.length < 19) {
     const gamesInfo = await apiCalls.boardGame(games[counter])
     if (gamesInfo) {
-      moviesToPost.push(randomMovieDetails)
+      moviesToPost.push(gamesInfo[0])
     }
     counter++
-    setTimeout(() => {console.log(`${counter} / 20`)}, 250)
+    setTimeout(() => {console.log(`${counter} / 20`)}, 100)
   }
   return gamesToPost
 }
