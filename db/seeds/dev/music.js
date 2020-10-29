@@ -1,4 +1,4 @@
-const getAllData = require('../../../itunesCall.js');
+const apiCalls = require('../../../apiCalls.js');
 
 const createMusic = async (knex, music) => {
   const newmusic = await knex('music').insert(
@@ -18,7 +18,7 @@ const createMusic = async (knex, music) => {
 exports.seed = async (knex) => {
   try {
     await knex('music').del()
-    let musicPromise = await getAllData('music')
+    let musicPromise = await apiCalls.getAllData('music')
     let musicTableData = musicPromise.results.map(music => {
       return createMusic(knex, music);
     });
