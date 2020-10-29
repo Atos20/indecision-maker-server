@@ -5,6 +5,7 @@ const createMovie = async (knex, movie) => {
   const movieId = await knex('movies').insert({
     title: movie.title.title,
     content_rating: movie.certificates && movie.certificates.US[0].certificate,
+    movie_plot: movie.plotSummary && movie.plotSummary.text,
     brief_description: movie.plotOutline.text,
     image_poster: movie.title.image.url,
     imdb_rating: movie.ratings.rating,
