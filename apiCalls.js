@@ -7,7 +7,7 @@ const movieFetch = async (table) => {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "imdb8.p.rapidapi.com",
-        "x-rapidapi-key": "ee8a5cc54emsh53e006c1504c8bfp1b5ea1jsn9ecd43ea0293"
+        "x-rapidapi-key": "580db340e1mshd3d03efa046e426p182a53jsnf5a8138fcc1a"
       }
     })
     const resolved = await response.json()
@@ -23,11 +23,10 @@ const singleMovie = async (title) => {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "imdb8.p.rapidapi.com",
-        "x-rapidapi-key": "ee8a5cc54emsh53e006c1504c8bfp1b5ea1jsn9ecd43ea0293"
+        "x-rapidapi-key": "580db340e1mshd3d03efa046e426p182a53jsnf5a8138fcc1a"
       }
     })
     const resolved = await response.json()
-    console.log(resolved)
     return resolved
   }
   catch (e) {
