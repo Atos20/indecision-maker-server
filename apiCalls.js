@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+require('dotenv').config(); 
 
 const movieFetch = async (table) => {
   try {
@@ -6,7 +7,7 @@ const movieFetch = async (table) => {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "imdb8.p.rapidapi.com",
-        "x-rapidapi-key": "580db340e1mshd3d03efa046e426p182a53jsnf5a8138fcc1a"
+        "x-rapidapi-key": process.env.IMDB_API_KEY
       }
     })
     return await response.json()
@@ -22,7 +23,7 @@ const singleMovie = async (title) => {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "imdb8.p.rapidapi.com",
-        "x-rapidapi-key": "580db340e1mshd3d03efa046e426p182a53jsnf5a8138fcc1a"
+        "x-rapidapi-key": process.env.IMDB_API_KEY
       }
     })
     return await response.json()
@@ -33,6 +34,7 @@ const singleMovie = async (title) => {
   }
 }
 const boardGame = async (name) => {
+  console.log()
   try {
     const response = await fetch(`https://www.boardgameatlas.com/api/search?name=${name}&pretty=true&client_id=JLBr5npPhV`, {
       "method": "GET",
