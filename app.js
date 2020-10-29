@@ -78,4 +78,13 @@ app.get('/api/v1/music/:genre', async (req, res) => {
   }
 })
 
+app.get('/api/v1/podcasts', async (req, res) => {
+  try {
+    const podcasts = await database('podcasts').select();
+    res.status(200).json(podcasts);
+  } catch(e) {
+    res.status(500).json({e})
+  }
+})
+
 module.exports = app;
