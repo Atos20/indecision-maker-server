@@ -45,4 +45,37 @@ app.get('/api/v1/boardgames', async (req, res) => {
   }
 })
 
+app.get('/api/v1/cardgames', async (req, res) => {
+  try {
+    const cardGames = await database('card_games').select();
+    res.status(200).json(cardGames);
+  } catch(e) {
+    res.status(500).json({e})
+  }
+})
+
+app.get('/api/v1/music', async (req, res) => {
+  try {
+    const music = await database('music').select();
+    res.status(200).json(music);
+  } catch(e) {
+    res.status(500).json({e})
+  }
+})
+
+app.get('/api/v1/music/:genre', async (req, res) => {
+  try {
+    const music = await database('music').where('genre', `${req.params.genre}`).select();
+    if (music.length) {
+      res.status(200).json(music);
+    } else {
+      res.status(404).json({
+        error: `No music found with a genre of ${ req.params.genre }`
+      })
+    }
+  } catch(e) {
+    res.status(500).json({e})
+  }
+})
+
 module.exports = app;
