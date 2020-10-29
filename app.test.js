@@ -47,7 +47,7 @@ describe('GET /api/v1/movies/:genre', () => {
 })
 
 describe('GET /api/v1/boardgames', () => {
-  it.only('should return a 200 and all of the board games', async () => {
+  it('should return a 200 and all of the board games', async () => {
     const expectedBoardGames = await database('board_games').select();
     expectedBoardGames.forEach(game => {
       game.created_at.toString()
@@ -84,9 +84,14 @@ describe('GET /api/v1/music', () => {
 })
 
 describe('GET /api/v1/music/:genre', () => {
-  it('should return a 200 and all music matching a specific genre', async () => {
-    const expectedMusic = await database('music').where('genre', 'country').select();
-    const response = await request(app).get('/api/v1/music/country');
+  it.only('should return a 200 and all music matching a specific genre', async () => {
+    const expectedMusic = await database('music').where('genre', 'Country').select();
+    expectedMusic.forEach(song => {
+      song.created_at.toString()
+      song.updated_at.toString()
+    })
+    console.log('expected music', expectedMusic)
+    const response = await request(app).get('/api/v1/music/Country');
     const result = response.body;
 
     expect(response.status).toBe(200);
@@ -98,7 +103,7 @@ describe('GET /api/v1/music/:genre', () => {
     const { error } = response.body
 
     expect(response.status).toBe(404);
-    expect(error).toEqual('No music found with this genre');
+    expect(error).toEqual('No music found with a genre of silent');
   })
 })
 
