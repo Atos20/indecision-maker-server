@@ -29,8 +29,8 @@ describe('GET /api/v1/movies', () => {
 
 describe('GET /api/v1/movies/:genre', () => {
   it.only('should return a 200 and all movies matching a specific genre', async () => {
-    const expectedMovies = await database('movies').where('genre', 'action').select();
-    const response = await request(app).get('/api/v1/movies/action');
+    const expectedMovies = await database('movies').where('genre', 'ilike', '%adventure%').select();
+    const response = await request(app).get('/api/v1/movies/adventure');
     const result = response.body;
 
     expect(response.status).toBe(200);
