@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 
-const getData = async (activity) => {
+const getAllData = async (activity) => {
     try {
 		const response = await fetch(`https://itunes.apple.com/search?term=${activity}`, {
 			"method": "GET",
@@ -12,11 +12,6 @@ const getData = async (activity) => {
 		console.log(e);
 	}
 }
-
-const getAllData = async (activity) => {
-    const data = await getData(activity)
-    return data
-  }
 
 module.exports = getAllData
 
