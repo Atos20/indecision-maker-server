@@ -1,7 +1,6 @@
 const fetch = require("node-fetch");
 
 const movieFetch = async (table) => {
-  console.log(table)
   try {
     const response = await fetch(`https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=/chart/popular/genre/${table}`, {
       "method": "GET",
@@ -14,7 +13,7 @@ const movieFetch = async (table) => {
     return resolved
   }
   catch (e) {
-    console.log(e);
+    return e
   }
 }
 const singleMovie = async (title) => {
@@ -30,8 +29,10 @@ const singleMovie = async (title) => {
     return resolved
   }
   catch (e) {
+    return e
   }
 }
 module.exports = {
   movieFetch, singleMovie
+
 }
