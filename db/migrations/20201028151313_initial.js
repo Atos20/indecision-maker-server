@@ -4,8 +4,8 @@ exports.up = function(knex) {
     .createTable('card_games', function (table) {
       table.increments('id').primary();
       table.string('name');
-      table.string('instructions', 10000);
-      table.string('description', 10000);
+      table.text('instructions', 10000);
+      table.text('description', 10000);
       table.string('materials');
       table.string('number_of_players');
       table.string('video');
