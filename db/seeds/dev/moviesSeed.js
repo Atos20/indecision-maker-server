@@ -1,5 +1,4 @@
 const movieData = require('../../data/movies');
-// const tables = ['adventure', 'all', 'comedy', 'fantasty', 'animation', 'family']
 const category = 'family'
 
 const createMovie = async (knex, movie) => {
