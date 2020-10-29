@@ -12,7 +12,7 @@ const createMovie = async (knex, movie) => {
     release_date: movie.releaseDate,
     runtime: movie.title.runningTimeInMinutes,
     where_to_watch: "not sure",
-  }, 'id');
+  });
 }
 exports.seed = async (knex) => {
   try {
