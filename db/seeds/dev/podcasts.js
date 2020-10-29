@@ -1,4 +1,4 @@
-const getAllData = require('../../../itunesCall.js');
+const apiCalls = require('../../../apiCalls.js');
 
 const createPodcast = async (knex, podcast) => {
   const newPodCast = await knex('podcasts').insert(
@@ -19,7 +19,7 @@ const createPodcast = async (knex, podcast) => {
 exports.seed = async (knex) => {
   try {
     await knex('podcasts').del()
-    let podcastPromise = await getAllData('podcast')
+    let podcastPromise = await apiCalls.getAllData('podcast')
     let podcastTableData = podcastPromise.results.map(podcast => {
       return createPodcast(knex, podcast);
     });
