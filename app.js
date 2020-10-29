@@ -10,8 +10,6 @@ app.locals.title = 'Test Express';
 app.use(cors());
 app.use(express.json());
 
-// All endpoints live here
-
 app.get('/api/v1/movies', async (req, res) => {
   try {
     const movies = await database('movies').select();
@@ -82,6 +80,21 @@ app.get('/api/v1/podcasts', async (req, res) => {
   try {
     const podcasts = await database('podcasts').select();
     res.status(200).json(podcasts);
+  } catch(e) {
+    res.status(500).json({e})
+  }
+})
+
+app.get('/api/v1/podcasts/:genre', async (req, res) => {
+  try {
+    const podcasts = await database('podcasts').where('genre', 'ilike', `%${req.params.genre}%`).select();
+    if (podcasts.length) {
+      res.status(200).json(podcasts);
+    } else {
+      res.status(404).json({
+        error: `No podcasts found with a genre of ${ req.params.genre }`
+      })
+    }
   } catch(e) {
     res.status(500).json({e})
   }
