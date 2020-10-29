@@ -5,10 +5,10 @@ const category = 'family'
 const createMovie = async (knex, movie) => {
   const movieId = await knex('movies').insert({
     title: movie.title.title,
-    brief_description: movie.plotSummary.text,
-    content_rating: movie.certificates.US.certificate,
+    content_rating: movie.certificates && movie.certificates.US[0].certificate,
+    brief_description: movie.plotOutline.text,
     image_poster: movie.title.image.url,
-    imdb_rating: movie.rating.rating,
+    imdb_rating: movie.ratings.rating,
     release_date: movie.releaseDate,
     runtime: movie.title.runningTimeInMinutes,
     where_to_watch: "not sure",
@@ -18,7 +18,6 @@ exports.seed = async (knex) => {
   try {
     await knex('movies').del()
     let allMovieData = await movieData(category)
-    console.log(allMovieData)
     let moviePromises = allMovieData.map(movie => {
       return createMovie(knex, movie);
     });
