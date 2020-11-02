@@ -119,7 +119,7 @@ describe('GET /api/v1/podcasts/:genre', () => {
   })
 })
 
-describe('GET /api/v1/questions/', () => {
+describe('GET /api/v1/questions', () => {
   it('should return a 200 and all questions', async () => {
     const expectedQuestions = await database('questions').select();
     const response = await request(app).get('/api/v1/questions');
