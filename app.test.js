@@ -28,9 +28,9 @@ describe('GET /api/v1/movies/:genre', () => {
     expect(result).toEqual(expectedMovies);
   })
 
-   it('should return a 404 and the message "No movies found with this genre"', async () => {
+  it('should return a 404 and the message "No movies found with this genre"', async () => {
     const response = await request(app).get('/api/v1/movies/boring');
-    const { error } = response.body
+    const {error} = response.body
 
     expect(response.status).toBe(404);
     expect(error).toEqual('No movies found with a genre of boring');
@@ -82,7 +82,7 @@ describe('GET /api/v1/music/:genre', () => {
 
   it('should return a 404 and the message "No music found with this genre"', async () => {
     const response = await request(app).get('/api/v1/music/silent');
-    const { error } = response.body
+    const {error} = response.body
 
     expect(response.status).toBe(404);
     expect(error).toEqual('No music found with a genre of silent');
@@ -112,9 +112,21 @@ describe('GET /api/v1/podcasts/:genre', () => {
 
   it('should return a 404 and the message "No podcasts found with this genre"', async () => {
     const response = await request(app).get('/api/v1/podcasts/silence');
-    const { error } = response.body
+    const {error} = response.body
 
     expect(response.status).toBe(404);
     expect(error).toEqual('No podcasts found with a genre of silence');
   })
+})
+
+describe('GET /api/v1/questions/', () => {
+  it('should return a 200 and all questions', async () => {
+    const expectedQuestions = await database('questions').select();
+    const response = await request(app).get('/api/v1/questions');
+    const result = response.body;
+
+    expect(response.status).toBe(200);
+    expect(result).toEqual(expectedQuestions);
+  })
+
 })
