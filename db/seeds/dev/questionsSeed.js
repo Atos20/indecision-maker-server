@@ -3,7 +3,7 @@ const questionsData = require('../../data/questions.js');
 const createQuestions = async (knex, question) => {
   const newQuestion = await knex('questions').insert({
     question: question.question,
-    choices: question.choices.join(', '),
+    choices: question.choices,
     activities: question.activities,
     answerType: question.answerType,
   });
