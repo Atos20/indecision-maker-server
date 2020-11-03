@@ -7,33 +7,6 @@ const questions_data = [
     allowedResponses: "0",
   },
   {
-    question: "How old is too old?",
-    choices: ["2010's", "2000's", "1990's", "1980's"],
-    activity: "music",
-    answerType: "musicAnswers",
-    allowedResponses: "1",
-  },
-  {
-    question: "How old is too old?",
-    choices: [
-      "2010's",
-      "2000's",
-      "1990's",
-      "1980's",
-      "No such thing as too old",
-    ],
-    activity: "movies",
-    answerType: "moviesAnswers",
-    allowedResponses: "1",
-  },
-  {
-    question: "What year?",
-    choices: [2020, 2019],
-    activity: "podcast",
-    answerType: "podcastsAnswers",
-    allowedResponses: "0",
-  },
-  {
     question: "Which music genre(s)?",
     choices: [
       "Pop",
@@ -49,6 +22,13 @@ const questions_data = [
     activity: "music",
     answerType: "musicAnswers",
     allowedResponses: "0",
+  },
+  {
+    question: "How old is too old?",
+    choices: ["2010's", "2000's", "1990's", "1980's, no such thing as too old"],
+    activity: "music",
+    answerType: "musicAnswers",
+    allowedResponses: "1",
   },
   {
     question: "Which podcast genre(s)?",
@@ -71,6 +51,13 @@ const questions_data = [
     allowedResponses: "0",
   },
   {
+    question: "I want a podcast from...",
+    choices: ["2020", "2019", "doesn't matter"],
+    activity: "podcast",
+    answerType: "podcastsAnswers",
+    allowedResponses: "0",
+  },
+  {
     question: "Which movie genre(s)?",
     choices: [
       "Adventure",
@@ -88,8 +75,21 @@ const questions_data = [
     allowedResponses: "0",
   },
   {
-    question: "Would you like your movie to be shorter than 2 hours?",
-    choices: ["yes", "no"],
+    question: "How old is too old?",
+    choices: [
+      "2010's",
+      "2000's",
+      "1990's",
+      "1980's",
+      "no such thing as too old",
+    ],
+    activity: "movies",
+    answerType: "moviesAnswers",
+    allowedResponses: "1",
+  },
+  {
+    question: "How about a 2 hour movie?",
+    choices: ["that's too long", "that's too short", "doesn't matter"],
     activity: "movies",
     answerType: "moviesAnswers",
     allowedResponses: "1",
