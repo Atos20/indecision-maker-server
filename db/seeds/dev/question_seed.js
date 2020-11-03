@@ -5,6 +5,7 @@ const createQuestions = async (knex, question) => {
     choices: question.choices,
     activity: question.activity,
     answerType: question.answerType,
+    allowedResponses: question.allowedResponses,
   });
 };
 exports.seed = async (knex) => {

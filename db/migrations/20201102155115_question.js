@@ -5,6 +5,7 @@ exports.up = (knex) => {
     table.specificType("choices", "text ARRAY");
     table.string("activity");
     table.string("answerType");
+    table.string("allowedResponses");
   });
 };
 
