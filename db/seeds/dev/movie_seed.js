@@ -1,10 +1,8 @@
-const movieData = require('../../data/movies');
-const category = 'family'
-
+const movieData = require("../../data/movies_data.js");
 const createMovie = async (knex, movie) => {
-  const movieId = await knex('movies').insert({
+  await knex("movies").insert({
     title: movie.title.title,
-    genre: movie.genres.join(', '),
+    genre: movie.genres,
     content_rating: movie.certificates && movie.certificates.US[0].certificate,
     movie_plot: movie.plotSummary && movie.plotSummary.text,
     brief_description: movie.plotOutline.text,
@@ -12,18 +10,17 @@ const createMovie = async (knex, movie) => {
     imdb_rating: movie.ratings.rating,
     release_date: movie.releaseDate,
     runtime: movie.title.runningTimeInMinutes,
-    where_to_watch: "not sure",
   });
-}
+};
 exports.seed = async (knex) => {
   try {
-    await knex('movies').del()
-    let allMovieData = await movieData(category)
-    let moviePromises = allMovieData.map(movie => {
+    await knex("movies").del();
+    let allMovieData = await movieData("family");
+    let moviePromises = allMovieData.map((movie) => {
       return createMovie(knex, movie);
     });
     return Promise.all(moviePromises);
   } catch (error) {
-    console.log(`Error seeding data: ${error}`)
+    console.log(`Error seeding data: ${error}`);
   }
 };

@@ -1,6 +1,6 @@
 const apiCalls = require("../../apiCalls.js")
 
-const movieData = async (genre) => {
+const movie_data = async (genre) => {
   const moviesByGenre = await apiCalls.movieFetch(genre)
   let moviesToPost = []
   let counter = 0;
@@ -16,4 +16,4 @@ const movieData = async (genre) => {
   return moviesToPost
 }
 
-module.exports = movieData;
+module.exports = movie_data;

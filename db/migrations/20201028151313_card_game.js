@@ -1,5 +1,4 @@
-
-exports.up = function(knex) {
+exports.up = function (knex) {
   return knex.schema
     .createTable('card_games', function (table) {
       table.increments('id').primary();
@@ -13,7 +12,7 @@ exports.up = function(knex) {
     })
 };
 
-exports.down = function(knex) {
-  return knex.schema 
+exports.down = function (knex) {
+  return knex.schema
     .dropTable('card_games');
 };
