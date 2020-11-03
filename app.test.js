@@ -15,7 +15,6 @@ describe('GET /api/v1/movies', () => {
     expect(response.status).toBe(200);
     expect(movies).toEqual(expectedMovies);
   })
-  //create sad path test
 })
 
 describe('GET /api/v1/movies/:genre', () => {
