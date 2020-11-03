@@ -2,13 +2,13 @@ const questions_data = [
   {
     question: "Which activities excite you right now?",
     choices: ["movies", "board games", "music", "card games", "podcasts"],
-    activities: "",
+    activity: "",
     answerType: "default",
   },
   {
     question: "How old is too old?",
     choices: ["2010's", "2000's", "1990's", "1980's"],
-    activities: "music",
+    activity: "music",
     answerType: "musicAnswers",
   },
   {
@@ -20,13 +20,13 @@ const questions_data = [
       "1980's",
       "No such thing as too old",
     ],
-    activities: "movies",
+    activity: "movies",
     answerType: "moviesAnswers",
   },
   {
     question: "What year?",
     choices: [2020, 2019],
-    activities: "podcast",
+    activity: "podcast",
     answerType: "podcastsAnswers",
   },
   {
@@ -42,7 +42,7 @@ const questions_data = [
       "R&B/Soul",
       "Rap",
     ],
-    activities: "music",
+    activity: "music",
     answerType: "musicAnswers",
   },
   {
@@ -61,7 +61,7 @@ const questions_data = [
       "Music",
       "Science",
     ],
-    activities: "podcasts",
+    activity: "podcasts",
     answerType: "podcastsAnswers",
   },
   {
@@ -77,25 +77,25 @@ const questions_data = [
       "Mystery",
       "Sci-Fi",
     ],
-    activities: "movies",
+    activity: "movies",
     answerType: "moviesAnswers",
   },
   {
     question: "Would you like your movie to be shorter than 2 hours?",
     choices: ["yes", "no"],
-    activities: "movies",
+    activity: "movies",
     answerType: "moviesAnswers",
   },
   {
     question: "How many people are playing?",
     choices: ["1", "2", "3", "4", "5", "more than 5"],
-    activities: "card games",
+    activity: "card games",
     answerType: "cardGamesAnswers",
   },
   {
     question: "How many people are playing?",
     choices: ["1", "2", "3", "4", "5", "more than 5"],
-    activities: "board games",
+    activity: "board games",
     answerType: "boardGamesAnswers",
   },
 ];

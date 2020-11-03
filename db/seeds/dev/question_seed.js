@@ -3,7 +3,7 @@ const createQuestions = async (knex, question) => {
   await knex("questions").insert({
     question: question.question,
     choices: question.choices,
-    activities: question.activities,
+    activity: question.activity,
     answerType: question.answerType,
   });
 };
