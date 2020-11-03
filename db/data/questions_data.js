@@ -23,7 +23,7 @@ const questions_data = [
       "No such thing as too old",
     ],
     activity: "movies",
-    answerType: "movieAnswers",
+    answerType: "moviesAnswers",
     allowedResponses: "1",
   },
   {
@@ -84,14 +84,14 @@ const questions_data = [
       "Sci-Fi",
     ],
     activity: "movies",
-    answerType: "movieAnswers",
+    answerType: "moviesAnswers",
     allowedResponses: "0",
   },
   {
     question: "Would you like your movie to be shorter than 2 hours?",
     choices: ["yes", "no"],
     activity: "movies",
-    answerType: "movieAnswers",
+    answerType: "moviesAnswers",
     allowedResponses: "1",
   },
   {
