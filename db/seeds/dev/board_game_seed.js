@@ -1,5 +1,4 @@
-const board_game_data = require('../../data/board_games_data');
-
+const boardGameData = require('../../data/board_games_data');
 const createBoardgame = async (knex, board) => {
   await knex('board_games').insert({
     name: board.name,
@@ -13,7 +12,7 @@ const createBoardgame = async (knex, board) => {
 exports.seed = async (knex) => {
   try {
     await knex('board_games').del()
-    let boardData = await board_game_data()
+    let boardData = await boardGameData()
     let boardGamePromises = boardData.map(board => {
       return createBoardgame(knex, board);
     });
