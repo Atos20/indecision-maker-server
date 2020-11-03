@@ -104,7 +104,8 @@ const questions_data = [
   {
     question: "How many people are playing?",
     choices: ["1", "2", "3", "4", "5", "more than 5"],
-    activity: "boardGameAnswers",
+    activity: "board games",
+    answerType: "cardGameAnswers",
     allowedResponses: "1",
   },
 ];
