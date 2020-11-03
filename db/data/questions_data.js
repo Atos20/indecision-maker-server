@@ -1,14 +1,14 @@
-const questionsData = [
+const questions_data = [
   {
     question: "Which activities excite you right now?",
     choices: ["movies", "board games", "music", "card games", "podcasts"],
-    activities: [],
+    activities: "",
     answerType: "default",
   },
   {
     question: "How old is too old?",
     choices: ["2010's", "2000's", "1990's", "1980's"],
-    activities: ["music"],
+    activities: "music",
     answerType: "musicAnswers",
   },
   {
@@ -20,13 +20,13 @@ const questionsData = [
       "1980's",
       "No such thing as too old",
     ],
-    activities: ["movies"],
+    activities: "movies",
     answerType: "moviesAnswers",
   },
   {
     question: "What year?",
     choices: [2020, 2019],
-    activities: ["podcast"],
+    activities: "podcast",
     answerType: "podcastsAnswers",
   },
   {
@@ -42,7 +42,7 @@ const questionsData = [
       "R&B/Soul",
       "Rap",
     ],
-    activities: ["music"],
+    activities: "music",
     answerType: "musicAnswers",
   },
   {
@@ -61,7 +61,7 @@ const questionsData = [
       "Music",
       "Science",
     ],
-    activities: ["podcasts"],
+    activities: "podcasts",
     answerType: "podcastsAnswers",
   },
   {
@@ -77,26 +77,26 @@ const questionsData = [
       "Mystery",
       "Sci-Fi",
     ],
-    activities: ["movies"],
+    activities: "movies",
     answerType: "moviesAnswers",
   },
   {
     question: "Would you like your movie to be shorter than 2 hours?",
     choices: ["yes", "no"],
-    activities: ["movies"],
+    activities: "movies",
     answerType: "moviesAnswers",
   },
   {
     question: "How many people are playing?",
     choices: ["1", "2", "3", "4", "5", "more than 5"],
-    activities: ["card games"],
+    activities: "card games",
     answerType: "cardGamesAnswers",
   },
   {
     question: "How many people are playing?",
     choices: ["1", "2", "3", "4", "5", "more than 5"],
-    activities: ["board games"],
+    activities: "board games",
     answerType: "boardGamesAnswers",
   },
 ];
-module.exports = questionsData
+module.exports = questions_data;
