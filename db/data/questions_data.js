@@ -98,14 +98,14 @@ const questions_data = [
     question: "How many people are playing?",
     choices: ["1", "2", "3", "4", "5", "more than 5"],
     activity: "card games",
-    answerType: "cardGameAnswers",
+    answerType: "cardGamesAnswers",
     allowedResponses: "1",
   },
   {
     question: "How many people are playing?",
     choices: ["1", "2", "3", "4", "5", "more than 5"],
     activity: "board games",
-    answerType: "boardGameAnswers",
+    answerType: "boardGamesAnswers",
     allowedResponses: "1",
   },
 ];
