@@ -15,7 +15,7 @@ const createMovie = async (knex, movie) => {
 exports.seed = async (knex) => {
   try {
     await knex("movies").del();
-    let allMovieData = await movieData(category);
+    let allMovieData = await movieData("family");
     let moviePromises = allMovieData.map((movie) => {
       return createMovie(knex, movie);
     });
