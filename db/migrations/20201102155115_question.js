@@ -3,7 +3,7 @@ exports.up = (knex) => {
     table.increments("id").primary();
     table.string("question");
     table.specificType("choices", "text ARRAY");
-    table.string("activities");
+    table.string("activity");
     table.string("answerType");
   });
 };
