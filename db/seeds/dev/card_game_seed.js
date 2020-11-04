@@ -5,7 +5,8 @@ const createCardGame = async (knex, game) => {
     instructions: game.instructions,
     description: game.description,
     materials: game.materials,
-    number_of_players: game.number_of_players,
+    min_players: game.min_players,
+    max_players: game.max_players,
     video: game.video,
     family_friendly: game.family_friendly,
   });

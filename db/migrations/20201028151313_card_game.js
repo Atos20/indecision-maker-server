@@ -6,7 +6,8 @@ exports.up = function (knex) {
       table.text('instructions', 10000);
       table.text('description', 10000);
       table.string('materials');
-      table.string('number_of_players');
+      table.string('min_players');
+      table.string('max_players');
       table.string('video');
       table.boolean('family_friendly').defaultTo(1);
     })
