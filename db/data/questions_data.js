@@ -7,33 +7,6 @@ const questions_data = [
     allowedResponses: "0",
   },
   {
-    question: "How old is too old?",
-    choices: ["2010's", "2000's", "1990's", "1980's"],
-    activity: "music",
-    answerType: "musicAnswers",
-    allowedResponses: "1",
-  },
-  {
-    question: "How old is too old?",
-    choices: [
-      "2010's",
-      "2000's",
-      "1990's",
-      "1980's",
-      "No such thing as too old",
-    ],
-    activity: "movies",
-    answerType: "moviesAnswers",
-    allowedResponses: "1",
-  },
-  {
-    question: "What year?",
-    choices: [2020, 2019],
-    activity: "podcast",
-    answerType: "podcastsAnswers",
-    allowedResponses: "0",
-  },
-  {
     question: "Which music genre(s)?",
     choices: [
       "Pop",
@@ -86,6 +59,33 @@ const questions_data = [
     activity: "movies",
     answerType: "moviesAnswers",
     allowedResponses: "0",
+  },
+  {
+    question: "How old is too old?",
+    choices: ["2010's", "2000's", "1990's", "1980's"],
+    activity: "music",
+    answerType: "musicAnswers",
+    allowedResponses: "1",
+  },
+  {
+    question: "How old is too old?",
+    choices: [
+      "2010's",
+      "2000's",
+      "1990's",
+      "1980's",
+      "No such thing as too old",
+    ],
+    activity: "movies",
+    answerType: "moviesAnswers",
+    allowedResponses: "1",
+  },
+  {
+    question: "What year?",
+    choices: [2020, 2019],
+    activity: "podcasts",
+    answerType: "podcastsAnswers",
+    allowedResponses: "1",
   },
   {
     question: "Would you like your movie to be shorter than 2 hours?",
