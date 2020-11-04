@@ -85,7 +85,7 @@ const questions_data = [
     choices: [2020, 2019],
     activity: "podcasts",
     answerType: "podcastsAnswers",
-    allowedResponses: "1",
+    allowedResponses: "0",
   },
   {
     question: "Would you like your movie to be shorter than 2 hours?",

@@ -2,9 +2,6 @@
 
 ### Installation
 
-* Clone this / forked repository
-* Follow the below steps for initial configuration
-
 **Install PostgreSQL globally and set up local database**
 
 * In terminal command line run the following commands:
@@ -23,18 +20,38 @@
 * `Knex migrate:latest` will build the tables we have pre-configured
 * `Knex seed:run`  will run all seed files to populate tables with data
 
+**Final Steps**
+
+* `npm test` to test database/endpoint functionality
+* `npm start` to start making your very own endpoint calls
+
 ---
 
-**Helpful Tips**
+### Helpful Tips
+
+**API Key** 
 
 * Make sure to keep your api key secure by utilizing a `.env` file (possible with [dotenv](https://www.npmjs.com/package/dotenv))
 * Setting the API key to `IMDB_API_KEY` environmental variable will hook it up to our current config
-* Changes made to migration files in knex will require a `knex migrate:rollback` and `knex migrate:latest`
+* The default key provided by the above link is limited to 500 free calls
 
+
+**Knex Quirks**
+
+ Syntax [cheatsheet](https://devhints.io/knex)
+
+ Changes made to database files in Knex will require a few steps to avoid corruption:
+  * `knex migrate:rollback` and `knex migrate:latest` to delete / rebuild tables 
+  * `knex seed:run` to re-populate the data in the tables
+
+Helpful syntax to avoid migrating/seeding all files:
+* Seed specific file: `knex seed:run --specific=seed_name.js`
+* Migrate specific file up: `knex migrate:up 20201102155115_migration_name.js`
+* Migrate specific file down: `knex migrate:down 20201102155115_migration_name.js`
 
 ---
 
-**Contributors**
+### Contributors
 
 [Blake Donnelly](https://github.com/BlakeDonn), [Nicole Gooden](https://github.com/nicolegooden), [Orlando MMurcio](https://github.com/Atos20)
 
