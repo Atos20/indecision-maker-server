@@ -6,7 +6,8 @@ let card_games_data = [
     description:
       "Thirty One, or Scat, is a casino type card game for 2 or more people and is played with a standard 52 playing card deck. In Thirty One, Aces are worth 11 points, face cards are worth 10 points and numbered cards are worth their pip value. The objective of the game is to have a hand equal to or as close to 31 as possible.",
     materials: "standard card deck",
-    number_of_players: "2 - 12",
+    min_players: "2",
+    max_players: "12",
     video: "https://youtu.be/xW9FBHR-rLs",
     family_friendly: true,
   },
@@ -17,7 +18,8 @@ let card_games_data = [
     description:
       "I Doubt It is a classic party game for three or more players. The game requires a standard 52 playing card deck with Kings high and Aces low. The objective of the game is to be the first person to get rid of all of their cards.",
     materials: "standard card deck",
-    number_of_players: "3 - 13",
+    min_players: "3",
+    max_players: "13",
     video: "https://youtu.be/mle3gVFkbmg",
     family_friendly: true,
   },
@@ -28,7 +30,8 @@ let card_games_data = [
     description:
       "Egyptian Rat Screw is a multiple player game that combines chance with agility. Played with a standard 52 playing card deck, the objective of the game is to win all of the cards through drawing and slapping.",
     materials: "standard card deck",
-    number_of_players: "2 - 6",
+    min_players: "2",
+    max_players: "6",
     video: "https://youtu.be/sOvBeT4tGOY",
     family_friendly: true,
   },
@@ -39,7 +42,8 @@ let card_games_data = [
     description:
       "GOPS, or Game of Pure Strategy, is a classic card game for two players and is played with a standard 52 playing card deck. In GOPS, Aces are low and Kings are high. The objective of GOPS is to win the most points.",
     materials: "standard card deck",
-    number_of_players: "2",
+    min_players: "2",
+    max_players: "2",
     video: "https://youtu.be/WUTc1AF3a0I",
     family_friendly: true,
   },
@@ -50,7 +54,8 @@ let card_games_data = [
     description:
       "Whist is a trick taking game for either 2 players or 2 teams of 2 players. Whist uses a standard 52 playing card deck with Aces high and 2s low. The trump suit changes with each deal. The objective of whist is to be the first team or player to reach 5 points",
     materials: "standard card deck",
-    number_of_players: "2 or 4",
+    min_players: "2",
+    max_players: "4",
     video: "https://youtu.be/9v5UxlUg55Y",
     family_friendly: true,
   },
@@ -61,7 +66,8 @@ let card_games_data = [
     description:
       "Rummy or Rum is a traditional card matching game that requires 2-6 players and a standard 52 playing card deck with Kings high and Aces low. The objective of Rummy is to have the most points at the end of the game.",
     materials: "standard card deck",
-    number_of_players: "2 - 6",
+    min_players: "2",
+    max_players: "6",
     video: "https://youtu.be/M_9aW1ZGgS4",
     family_friendly: true,
   },
@@ -72,7 +78,8 @@ let card_games_data = [
     description:
       "Palace is a trick-taking card game for two to four players. The game requires a standard 52 playing card deck and is suitable for ages 8 and up. In Palace, 3s are low and Aces are high. The objective of Palace is to not be the last person with cards.",
     materials: "standard card deck",
-    number_of_players: "2 - 4",
+    min_players: "2",
+    max_players: "4",
     video: "https://youtu.be/LVFIpjNQ7R4",
     family_friendly: true,
   },
@@ -83,7 +90,8 @@ let card_games_data = [
     description:
       "Spit is a classic game played with 2 people and a standard 52 playing card deck. The objective of the game is to lose all of your cards.",
     materials: "standard card deck",
-    number_of_players: "2",
+    min_players: "2",
+    max_players: "2",
     video: "https://youtu.be/yv7k6XYzgSo",
     family_friendly: true,
   },
@@ -92,9 +100,10 @@ let card_games_data = [
     instructions:
       "Before gameplay can begin, a dealer must be selected. To do so, players must choose a random card from a shuffled deck. The player with the lowest card becomes the dealer. Ties are broken with repeated drawings. The dealer shuffles the deck and then passes out seven cards, faced down, to each player. The remaining deck is then placed to the right of the dealer. The dealer begins the game by drawing a card from the deck. The dealer then discards a card and passes it clockwise. This pattern continues: once a player receives a card, they then must discard a card clockwise. Players can only have seven cards in their hand at a time. The goal is to form a four of a kind. Once a player has gotten a four of a kind, they must place a finger on their nose. The other players must follow the action after they notice it. The last player to put a finger on their nose loses the round. In Spoons, instead of placing a finger on their nose, players grab a spoon from the center of the group. There is always one less spoon than the number of players so, the person who does not get a spoon after a player gets a four of a kind loses that round.",
     description:
-      "Spoons is a classic card game for four or more people and is played with a standard 52 playing card deck. In larger groups, however, two decks may be used. The objective of Spoons is to be the first player to get a four of a kind or not to be the last player to see that someone else has received a four of a kind.",
+      "Spoons is a classic card game for four to six people and is played with a standard 52 playing card deck. In larger groups, however, two decks may be used. The objective of Spoons is to be the first player to get a four of a kind or not to be the last player to see that someone else has received a four of a kind.",
     materials: "standard card deck",
-    number_of_players: "4+",
+    min_players: "4",
+    max_players: "6",
     video: "https://youtu.be/P5apwK711_8",
     family_friendly: true,
   },
@@ -105,8 +114,8 @@ let card_games_data = [
     description:
       "Canasta is a Rummy type game of melding that is played with two 52 playing card decks and two teams of 2. The objective of Canasta is for your team to reach 5000 points first.",
     materials: "standard card deck",
-    number_of_players: "2 teams of 2",
-    video: "https://youtu.be/QYEMpDoN0Mw",
+    min_players: "4",
+    max_players: "4",    video: "https://youtu.be/QYEMpDoN0Mw",
     family_friendly: true,
   },
   {
@@ -117,7 +126,8 @@ let card_games_data = [
       "Amazons Solitaire is a great single player card game, it is very similar to Klondike, players of Klondike will pick this game up very quickly.",
     materials:
       "standard card deck, without twos, threes, fours, fives, sixes, and kings",
-    number_of_players: "1",
+    min_players: "1",
+    max_players: "1",    
     video: "https://youtu.be/jbXmb67mBio",
     family_friendly: true,
   },
@@ -128,7 +138,8 @@ let card_games_data = [
     description:
       "Forty Thieves is a Patience game. It is quite difficult to win, and relies mostly on skill.",
     materials: "two standard card decks",
-    number_of_players: "1",
+    min_players: "1",
+    max_players: "1",
     video: "https://youtu.be/jN1qjAVPLFo",
     family_friendly: true,
   },
@@ -139,7 +150,8 @@ let card_games_data = [
     description:
       "FreeCell solitaire is a classic card game and happens to be one of the most popular solitaire games of all time.  It is more interesting than Klondike solitaire in that you can beat every single game, without exception. Unlike nearly all other forms of solitaire, you can use your brainpower rather than relying on luck to beat the card game. ",
     materials: "standard card deck",
-    number_of_players: "1",
+    min_players: "1",
+    max_players: "1",
     video: "https://youtu.be/4CQvyOKtrBw",
     family_friendly: true,
   },
@@ -150,7 +162,8 @@ let card_games_data = [
     description:
       "Clock Solitaire is a fun and interesting variant of solitaire.  While it is simple to play it’s rare to win this solitaire card game as it is almost entirely driven by luck.",
     materials: "standard card deck",
-    number_of_players: "1",
+    min_players: "1",
+    max_players: "1",
     video: "https://youtu.be/yfhxZtZfV4o",
     family_friendly: true,
   },
@@ -161,7 +174,8 @@ let card_games_data = [
     description:
       "Go Fish is a classic and simple card game for kids.  While the concept of the game is simple, there are many rules and variations of the game.",
     materials: "standard card deck",
-    number_of_players: "Best for 3 - 6 players, with a minimum of 2",
+    min_players: "2",
+    max_players: "6",
     video: "https://www.youtube.com/watch?v=emvdufe6t-8",
     family_friendly: true,
   },
