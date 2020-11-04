@@ -2,6 +2,7 @@
 
 ### Installation
 
+---
 **Install PostgreSQL globally and set up local database:**
 
 * In terminal command line run the following commands:
@@ -29,6 +30,7 @@
 
 ### Helpful Tips
 
+---
 **Knex Quirks:**
 
 * Syntax [cheatsheet](https://devhints.io/knex)
@@ -56,7 +58,10 @@
 
 ---
 
-### Contributors
+### Contributors / Project Details
+
+
+---
 
 [Blake Donnelly](https://github.com/BlakeDonn), [Nicole Gooden](https://github.com/nicolegooden), [Orlando MMurcio](https://github.com/Atos20)
 
