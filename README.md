@@ -1,4 +1,38 @@
-## FitLit Group Project
+## Indecision Maker Backend 
+
+### Installation
+
+* Clone this / forked repository
+* Follow the below steps for initial configuration
+
+**Install PostgreSQL globally and set up local database**
+
+* In terminal command line run the following commands:
+* PostgreSQL global install: `brew install postgres` 
+* Start local database: `pg_ctl -D /usr/local/var/postgres start`
+* Run: `psql postgres`
+* *Should now be at the PostgreSQL CLI...*
+* postgres=# `CREATE DATABASE indecision`
+* Your local database should now be hooked up with our pre-configured files
+
+**Initial Migrations and Seeding**
+
+* Knex handles all migrations and seeding through CLI inputs
+* The following commands will populate the database with our pre-configured tables and data 
+* An API key must be provided to seed the movie data files, get one [here](https://rapidapi.com/blog/lp/imdb-api/)
+* `Knex migrate:latest` will build the tables we have pre-configured
+* `Knex seed:run`  will run all seed files to populate tables with data
+
+---
+
+**Helpful Tips**
+
+* Make sure to keep your api key secure by utilizing a `.env` file (possible with [dotenv](https://www.npmjs.com/package/dotenv))
+* Setting the API key to `IMDB_API_KEY` environmental variable will hook it up to our current config
+* Changes made to migration files in knex will require a `knex migrate:rollback` and `knex migrate:latest`
+
+
+---
 
 **Contributors**
 
@@ -7,70 +41,8 @@
 **Project Description**
 
 * The backend companion for the [indecision-maker](https://github.com/nicolegooden/indecision-maker) application, built with Knex, Express, and PostgreSQL *
-
-**Installation**
-
-**Fork this repository:**
-
-* https://github.com/BlakeDonn/fitlit-starter-kit
-
-**Clone your forked repository**
-
-* `git clone` and the copied URL
-
-**Change into the directory and install the project dependencies**
-
-* `cd` into directory and run `npm install` for dependencies
-
-**Install PostgreSQL globally and set up local database**
-
-* In terminal command line run the following commands:
-* PostgreSQL gloal install: `brew install postgres` 
-* Start local database: `pg_ctl -D /usr/local/var/postgres start`
-* Run: `psql postgres`
-* Should now be at the PostgreSQL CLI...
-* postgres=# `CREATE DATABASE indecision`
-* Your local database should now be hooked up with our pre-configured files
-
-**Initial Migrations and Seeding**
-
-* Knex handles all migrations and seeding through CLI inputs
-* The following commands will populate the database our pre-configured tables and data 
-
-* `Knex migrate:latest` will build the tables we have pre-configured
-* `Knex migrate:seed` run will run all seed files to populate tables with data
-* An API key must be provided to seed the movie data files, found [here](https://rapidapi.com/blog/lp/imdb-api/)
-
-**Helpful Tips for Knex**
-
-
-* [Knex Cheatsheet](https://devhints.io/knex)
-* Knex migrate:rollback will roll back to the previous batch and remove all tables + data for that batch
-
-**Project Goals**
-
-* Create a functioning app by following the spec below
-* Using ES6 create classes that communicate with each other
-* Write clean code that follows the Single Responsibility Principle
-* Build a strong testing suite using TDD
-* Manipulate data with object and array prototype methods
-* Dsplay user data on a dashboard that presents  information in a clear way
-
-**Wins**
-
-* Working with JS in a collaborative environment with a set deadline.
-* Have a fully functioning and displaying app.
-* Several rounds of refactoring in order to keep code as clean as possible.
-
-**Challenges**
-
-* Mastering the GitHub workflow with many branches and multiple team members.
-* Creating sad path tests for an application without any user inputs.
-* Getting all of the parts to display in a user friendly way on the dashboard.
-
-
+ 
 **Programming Languages Used**
-
 * HTML
 * CSS
 * JavaScript
