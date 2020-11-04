@@ -51,13 +51,6 @@ const questions_data = [
     allowedResponses: "0",
   },
   {
-    question: "I want a podcast from...",
-    choices: ["2020", "2019", "doesn't matter"],
-    activity: "podcast",
-    answerType: "podcastsAnswers",
-    allowedResponses: "0",
-  },
-  {
     question: "Which movie genre(s)?",
     choices: [
       "Adventure",
@@ -89,7 +82,7 @@ const questions_data = [
   },
   {
     question: "How about a 2 hour movie?",
-    choices: ["that's too long", "that's too short", "doesn't matter"],
+    choices: ["too long", "that's fine"],
     activity: "movies",
     answerType: "moviesAnswers",
     allowedResponses: "1",
