@@ -22,6 +22,31 @@
 
 * `cd` into directory and run `npm install` for dependencies
 
+**Install PostgreSQL globally and set up local database**
+
+* In terminal command line run the following commands:
+* PostgreSQL gloal install: `brew install postgres` 
+* Start local database: `pg_ctl -D /usr/local/var/postgres start`
+* Run: `psql postgres`
+* Should now be at the PostgreSQL CLI...
+* postgres=# `CREATE DATABASE indecision`
+* Your local database should now be hooked up with our pre-configured files
+
+**Initial Migrations and Seeding**
+
+* Knex handles all migrations and seeding through CLI inputs
+* The following commands will populate the database our pre-configured tables and data 
+
+* `Knex migrate:latest` will build the tables we have pre-configured
+* `Knex migrate:seed` run will run all seed files to populate tables with data
+* An API key must be provided to seed the movie data files, found [here](https://rapidapi.com/blog/lp/imdb-api/)
+
+**Helpful Tips for Knex**
+
+
+* [Knex Cheatsheet](https://devhints.io/knex)
+* Knex migrate:rollback will roll back to the previous batch and remove all tables + data for that batch
+
 **Project Goals**
 
 * Create a functioning app by following the spec below
