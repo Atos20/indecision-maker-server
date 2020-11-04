@@ -25,7 +25,7 @@ const questions_data = [
   },
   {
     question: "How old is too old?",
-    choices: ["2010's", "2000's", "1990's", "1980's, no such thing as too old"],
+    choices: ["2010's", "2000's", "1990's", "1980's", "no such thing as too old"],
     activity: "music",
     answerType: "musicAnswers",
     allowedResponses: "1",
