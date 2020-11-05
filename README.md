@@ -26,6 +26,18 @@
 * `npm test` to test database/endpoint functionality
 * `npm start` to start making your very own endpoint calls
 
+**Optional Deployment**
+
+* Create heroku account
+* Install heroku : `brew tap heroku/brew` && brew install heroku
+* Login heroku `heroku login`
+* Add Procfile (in root directory, no .js or .txt just Procfile)
+* Create app: `heroku app_name`
+* Check that origin is updated `git remote -v` should display both heroku and git
+* Deploy to heroku `git push heroku main`
+* Check app: `heroku open`
+* Migrate production database `heroku run 'knex migrate:latest'`
+
 ---
 
 ### Helpful Tips
