@@ -37,6 +37,7 @@
 * Deploy to heroku: `git push heroku main`
 * Check app: `heroku open`
 * Migrate production database: `heroku run 'knex migrate:latest'`
+* Add API key in Heroku > Your App > Config Vars
 
 ---
 
@@ -91,5 +92,3 @@
   * Podcasts seeded from [Itunes API](https://www.boardgameatlas.com/api/docs)
   * Card games seeded from developer generated research (our dataset)
   * Question set for user to answer to randomize generated activity
-___
-
